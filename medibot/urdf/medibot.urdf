@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="medibot">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.007005 -0.057324 0.5622"
+        rpy="0 0 0" />
+      <mass
+        value="16.587" />
+      <inertia
+        ixx="0.33575"
+        ixy="-0.00045583"
+        ixz="-0.0016631"
+        iyy="0.47721"
+        iyz="-0.0005298"
+        izz="0.26398" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://medibot/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://medibot/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="right_wheel">
+    <inertial>
+      <origin
+        xyz="2.7756E-17 0 -0.1"
+        rpy="0 0 0" />
+      <mass
+        value="18.237" />
+      <inertia
+        ixx="0.20771"
+        ixy="8.4374E-34"
+        ixz="-6.6177E-18"
+        iyy="0.20771"
+        iyz="3.0093E-34"
+        izz="0.29384" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://medibot/meshes/right_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://medibot/meshes/right_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.189 0.18156 -0.069152"
+      rpy="-1.5708 0 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_wheel" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="left_wheel">
+    <inertial>
+      <origin
+        xyz="-2.7756E-17 0 0.1"
+        rpy="0 0 0" />
+      <mass
+        value="18.237" />
+      <inertia
+        ixx="0.20771"
+        ixy="-3.3177E-35"
+        ixz="-6.9791E-18"
+        iyy="0.20771"
+        iyz="-6.8474E-34"
+        izz="0.29384" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://medibot/meshes/left_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://medibot/meshes/left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.189 0.17969 -0.064239"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_wheel" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="hokuyo">
+    <inertial>
+      <origin
+        xyz="4.1383E-05 0.029531 -0.00078094"
+        rpy="0 0 0" />
+      <mass
+        value="0.13468" />
+      <inertia
+        ixx="7.602E-05"
+        ixy="1.0575E-07"
+        ixz="3.0743E-07"
+        iyy="4.8065E-05"
+        iyz="-6.6024E-07"
+        izz="7.233E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://medibot/meshes/hokuyo.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://medibot/meshes/hokuyo.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hokuyo_joint"
+    type="fixed">
+    <origin
+      xyz="0 -0.44979 -0.16362"
+      rpy="1.5816 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="hokuyo" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="camera">
+    <inertial>
+      <origin
+        xyz="0.0096149 -0.024482 -8.2525E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.14695" />
+      <inertia
+        ixx="5.1603E-05"
+        ixy="7.8246E-07"
+        ixz="-4.4646E-07"
+        iyy="0.00010094"
+        iyz="1.1489E-07"
+        izz="0.00010256" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://medibot/meshes/camera.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://medibot/meshes/camera.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camera_joint"
+    type="fixed">
+    <origin
+      xyz="0 -0.3575 0.031"
+      rpy="-1.5708 0 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="camera" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>
